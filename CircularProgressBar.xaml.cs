@@ -67,11 +67,11 @@ namespace RoundProgressBar
         private void SetPosition(Ellipse ellipse, double offset,
             double posOffSet, double step)
         {
-            ellipse.SetValue(Canvas.LeftProperty, 50.0
-                + Math.Sin(offset + posOffSet * step) * 50.0);
+            ellipse.SetValue(Canvas.LeftProperty, 10.0
+                + Math.Sin(offset + posOffSet * step) * 10.0);
 
-            ellipse.SetValue(Canvas.TopProperty, 50
-                + Math.Cos(offset + posOffSet * step) * 50.0);
+            ellipse.SetValue(Canvas.TopProperty, 10
+                + Math.Cos(offset + posOffSet * step) * 10.0);
         }
 
         private void HandleUnloaded(object sender, RoutedEventArgs e)
