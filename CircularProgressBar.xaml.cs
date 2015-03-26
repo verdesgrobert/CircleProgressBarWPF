@@ -13,6 +13,18 @@ namespace RoundProgressBar
     /// </summary>
     public partial class CircularProgressBar
     {
+        public static readonly DependencyProperty CircleSizeProperty = DependencyProperty.Register(
+            "CircleSize", typeof(double), typeof(CircularProgressBar), new PropertyMetadata(default(double)));
+
+        public double CircleSize
+        {
+            get { return (double)GetValue(CircleSizeProperty); }
+            set
+            {
+                SetValue(CircleSizeProperty, value);
+            }
+        }
+
         #region Data
         private readonly DispatcherTimer animationTimer;
         #endregion
@@ -45,7 +57,7 @@ namespace RoundProgressBar
 
         private void HandleAnimationTick(object sender, EventArgs e)
         {
-            SpinnerRotate.Angle = (SpinnerRotate.Angle + 36) % 360;
+            //SpinnerRotate.Angle = (SpinnerRotate.Angle + 36) % 360;
         }
 
         private void HandleLoaded(object sender, RoutedEventArgs e)
@@ -67,11 +79,13 @@ namespace RoundProgressBar
         private void SetPosition(Ellipse ellipse, double offset,
             double posOffSet, double step)
         {
-            ellipse.SetValue(Canvas.LeftProperty, 10.0
-                + Math.Sin(offset + posOffSet * step) * 10.0);
+            double left = (Width) / 2
+                + Math.Sin(offset + posOffSet * step) * (Width / 3);
+            double top = (Width) / 2
+                + Math.Cos(offset + posOffSet * step) * (Width / 3);
 
-            ellipse.SetValue(Canvas.TopProperty, 10
-                + Math.Cos(offset + posOffSet * step) * 10.0);
+            ellipse.SetValue(Canvas.LeftProperty, left);
+            ellipse.SetValue(Canvas.TopProperty, top);
         }
 
         private void HandleUnloaded(object sender, RoutedEventArgs e)

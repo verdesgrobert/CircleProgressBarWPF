@@ -1,50 +1,51 @@
 ﻿<UserControl x:Class="RoundProgressBar.CircularProgressBar"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Height="Auto" Width="Auto" Background="Transparent"
+     Background="Transparent"
+             x:Name="root"
              IsVisibleChanged="HandleVisibleChanged">
     <Grid x:Name="LayoutRoot" Background="Transparent"
           ToolTip="Searching...."
-          HorizontalAlignment="Center"
-          VerticalAlignment="Center">
-        <Canvas RenderTransformOrigin="0.5,0.5"
-                HorizontalAlignment="Center"
-             VerticalAlignment="Center" Width="24"
-             Height="24" Loaded="HandleLoaded"
+          HorizontalAlignment="Stretch"
+          VerticalAlignment="Stretch">
+        <Canvas RenderTransformOrigin="0.5,0.5" 
+                HorizontalAlignment="Stretch"
+             VerticalAlignment="Stretch" 
+              Loaded="HandleLoaded"
                 Unloaded="HandleUnloaded"  >
-            <Ellipse x:Name="C0" Width="5" Height="5"
+            <Ellipse x:Name="C0" Width="{Binding ElementName=root,Path=CircleSize}" Height="{Binding ElementName=root,Path=CircleSize}"
                      Canvas.Left="0"
                      Canvas.Top="0" Stretch="Fill"
                      Fill="Black" Opacity="1.0"/>
-            <Ellipse x:Name="C1" Width="5" Height="5"
+            <Ellipse x:Name="C1" Width="{Binding ElementName=root,Path=CircleSize}" Height="{Binding ElementName=root,Path=CircleSize}"
                      Canvas.Left="0"
                      Canvas.Top="0" Stretch="Fill"
                      Fill="Black" Opacity="0.9"/>
-            <Ellipse x:Name="C2" Width="5" Height="5"
+            <Ellipse x:Name="C2" Width="{Binding ElementName=root,Path=CircleSize}" Height="{Binding ElementName=root,Path=CircleSize}"
                      Canvas.Left="0"
                      Canvas.Top="0" Stretch="Fill"
                      Fill="Black" Opacity="0.8"/>
-            <Ellipse x:Name="C3" Width="5" Height="5"
+            <Ellipse x:Name="C3" Width="{Binding ElementName=root,Path=CircleSize}" Height="{Binding ElementName=root,Path=CircleSize}"
                      Canvas.Left="0"
                      Canvas.Top="0" Stretch="Fill"
                      Fill="Black" Opacity="0.7"/>
-            <Ellipse x:Name="C4" Width="5" Height="5"
+            <Ellipse x:Name="C4" Width="{Binding ElementName=root,Path=CircleSize}" Height="{Binding ElementName=root,Path=CircleSize}"
                      Canvas.Left="0"
                      Canvas.Top="0" Stretch="Fill"
                      Fill="Black" Opacity="0.6"/>
-            <Ellipse x:Name="C5" Width="5" Height="5"
+            <Ellipse x:Name="C5" Width="{Binding ElementName=root,Path=CircleSize}" Height="{Binding ElementName=root,Path=CircleSize}"
                      Canvas.Left="0"
                      Canvas.Top="0" Stretch="Fill"
                      Fill="Black" Opacity="0.5"/>
-            <Ellipse x:Name="C6" Width="5" Height="5"
+            <Ellipse x:Name="C6" Width="{Binding ElementName=root,Path=CircleSize}" Height="{Binding ElementName=root,Path=CircleSize}"
                      Canvas.Left="0"
                      Canvas.Top="0" Stretch="Fill"
                      Fill="Black" Opacity="0.4"/>
-            <Ellipse x:Name="C7" Width="5" Height="5"
+            <Ellipse x:Name="C7" Width="{Binding ElementName=root,Path=CircleSize}" Height="{Binding ElementName=root,Path=CircleSize}"
                      Canvas.Left="0"
                      Canvas.Top="0" Stretch="Fill"
                      Fill="Black" Opacity="0.3"/>
-            <Ellipse x:Name="C8" Width="5" Height="5"
+            <Ellipse x:Name="C8" Width="{Binding ElementName=root,Path=CircleSize}" Height="{Binding ElementName=root,Path=CircleSize}"
                      Canvas.Left="0"
                      Canvas.Top="0" Stretch="Fill"
                      Fill="Black" Opacity="0.2"/>
