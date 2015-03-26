@@ -14,7 +14,7 @@ namespace RoundProgressBar
     public partial class CircularProgressBar
     {
         public static readonly DependencyProperty CircleSizeProperty = DependencyProperty.Register(
-            "CircleSize", typeof(double), typeof(CircularProgressBar), new PropertyMetadata(default(double)));
+            "CircleSize", typeof(double), typeof(CircularProgressBar), new PropertyMetadata(7.0));
 
         public double CircleSize
         {
@@ -22,6 +22,20 @@ namespace RoundProgressBar
             set
             {
                 SetValue(CircleSizeProperty, value);
+                HandleLoaded(this, new RoutedEventArgs());
+            }
+        }
+
+        public static readonly DependencyProperty CircleDiameterProperty = DependencyProperty.Register(
+            "CircleDiameter", typeof(double), typeof(CircularProgressBar), new PropertyMetadata(20.0));
+
+        public double CircleDiameter
+        {
+            get { return (double)GetValue(CircleDiameterProperty); }
+            set
+            {
+                SetValue(CircleDiameterProperty, value);
+                HandleLoaded(this, new RoutedEventArgs());
             }
         }
 
@@ -57,7 +71,7 @@ namespace RoundProgressBar
 
         private void HandleAnimationTick(object sender, EventArgs e)
         {
-            //SpinnerRotate.Angle = (SpinnerRotate.Angle + 36) % 360;
+            SpinnerRotate.Angle = (SpinnerRotate.Angle + 36) % 360;
         }
 
         private void HandleLoaded(object sender, RoutedEventArgs e)
@@ -74,15 +88,17 @@ namespace RoundProgressBar
             SetPosition(C6, offset, 6.0, step);
             SetPosition(C7, offset, 7.0, step);
             SetPosition(C8, offset, 8.0, step);
+            if (CircleDiameter == 20.0)
+                CircleDiameter = Width / 3;
         }
 
         private void SetPosition(Ellipse ellipse, double offset,
             double posOffSet, double step)
         {
-            double left = (Width) / 2
-                + Math.Sin(offset + posOffSet * step) * (Width / 3);
-            double top = (Width) / 2
-                + Math.Cos(offset + posOffSet * step) * (Width / 3);
+            double left = (Width - CircleSize) / 2
+                + Math.Sin(offset + posOffSet * step) * CircleDiameter;
+            double top = (Width - CircleSize) / 2
+                + Math.Cos(offset + posOffSet * step) * CircleDiameter;
 
             ellipse.SetValue(Canvas.LeftProperty, left);
             ellipse.SetValue(Canvas.TopProperty, top);
