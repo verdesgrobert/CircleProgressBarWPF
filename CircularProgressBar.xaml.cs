@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using System.Windows.Threading;
 using System.Windows.Input;
 using System.Windows.Shapes;
@@ -24,6 +25,15 @@ namespace RoundProgressBar
                 SetValue(CircleSizeProperty, value);
                 HandleLoaded(this, new RoutedEventArgs());
             }
+        }
+
+        public static readonly DependencyProperty ColorProperty = DependencyProperty.Register(
+            "Color", typeof(Brush), typeof(CircularProgressBar), new PropertyMetadata(default(Brush)));
+
+        public Brush Color
+        {
+            get { return (Brush)GetValue(ColorProperty); }
+            set { SetValue(ColorProperty, value); }
         }
 
         public static readonly DependencyProperty CircleDiameterProperty = DependencyProperty.Register(

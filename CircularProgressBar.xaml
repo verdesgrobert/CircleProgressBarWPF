@@ -16,39 +16,39 @@
             <Ellipse x:Name="C0" Width="{Binding ElementName=root,Path=CircleSize}" Height="{Binding ElementName=root,Path=CircleSize}"
                      Canvas.Left="0"
                      Canvas.Top="0" Stretch="Fill"
-                     Fill="Black" Opacity="1.0"/>
+                     Fill="{Binding ElementName=root,Path=Color}" Opacity="1.0"/>
             <Ellipse x:Name="C1" Width="{Binding ElementName=root,Path=CircleSize}" Height="{Binding ElementName=root,Path=CircleSize}"
                      Canvas.Left="0"
                      Canvas.Top="0" Stretch="Fill"
-                     Fill="Black" Opacity="0.9"/>
+                     Fill="{Binding ElementName=root,Path=Color}" Opacity="0.9"/>
             <Ellipse x:Name="C2" Width="{Binding ElementName=root,Path=CircleSize}" Height="{Binding ElementName=root,Path=CircleSize}"
                      Canvas.Left="0"
                      Canvas.Top="0" Stretch="Fill"
-                     Fill="Black" Opacity="0.8"/>
+                     Fill="{Binding ElementName=root,Path=Color}" Opacity="0.8"/>
             <Ellipse x:Name="C3" Width="{Binding ElementName=root,Path=CircleSize}" Height="{Binding ElementName=root,Path=CircleSize}"
                      Canvas.Left="0"
                      Canvas.Top="0" Stretch="Fill"
-                     Fill="Black" Opacity="0.7"/>
+                     Fill="{Binding ElementName=root,Path=Color}" Opacity="0.7"/>
             <Ellipse x:Name="C4" Width="{Binding ElementName=root,Path=CircleSize}" Height="{Binding ElementName=root,Path=CircleSize}"
                      Canvas.Left="0"
                      Canvas.Top="0" Stretch="Fill"
-                     Fill="Black" Opacity="0.6"/>
+                     Fill="{Binding ElementName=root,Path=Color}" Opacity="0.6"/>
             <Ellipse x:Name="C5" Width="{Binding ElementName=root,Path=CircleSize}" Height="{Binding ElementName=root,Path=CircleSize}"
                      Canvas.Left="0"
                      Canvas.Top="0" Stretch="Fill"
-                     Fill="Black" Opacity="0.5"/>
+                     Fill="{Binding ElementName=root,Path=Color}" Opacity="0.5"/>
             <Ellipse x:Name="C6" Width="{Binding ElementName=root,Path=CircleSize}" Height="{Binding ElementName=root,Path=CircleSize}"
                      Canvas.Left="0"
                      Canvas.Top="0" Stretch="Fill"
-                     Fill="Black" Opacity="0.4"/>
+                     Fill="{Binding ElementName=root,Path=Color}" Opacity="0.4"/>
             <Ellipse x:Name="C7" Width="{Binding ElementName=root,Path=CircleSize}" Height="{Binding ElementName=root,Path=CircleSize}"
                      Canvas.Left="0"
                      Canvas.Top="0" Stretch="Fill"
-                     Fill="Black" Opacity="0.3"/>
+                     Fill="{Binding ElementName=root,Path=Color}" Opacity="0.3"/>
             <Ellipse x:Name="C8" Width="{Binding ElementName=root,Path=CircleSize}" Height="{Binding ElementName=root,Path=CircleSize}"
                      Canvas.Left="0"
                      Canvas.Top="0" Stretch="Fill"
-                     Fill="Black" Opacity="0.2"/>
+                     Fill="{Binding ElementName=root,Path=Color}" Opacity="0.2"/>
             <Canvas.RenderTransform>
                 <RotateTransform x:Name="SpinnerRotate"
                      Angle="0" />
