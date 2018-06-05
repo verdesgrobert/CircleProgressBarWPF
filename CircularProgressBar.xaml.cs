@@ -105,10 +105,10 @@ namespace RoundProgressBar
         private void SetPosition(Ellipse ellipse, double offset,
             double posOffSet, double step)
         {
-            double left = (Width - CircleSize) / 2
-                + Math.Sin(offset + posOffSet * step) * CircleDiameter;
-            double top = (Width - CircleSize) / 2
-                + Math.Cos(offset + posOffSet * step) * CircleDiameter;
+            double left = ((Width - CircleSize) / 2)
+                + Math.Sin(offset + (posOffSet * step)) * CircleDiameter;
+            double top = ((Width - CircleSize) / 2)
+                + Math.Cos(offset + (posOffSet * step)) * CircleDiameter;
 
             ellipse.SetValue(Canvas.LeftProperty, left);
             ellipse.SetValue(Canvas.TopProperty, top);
